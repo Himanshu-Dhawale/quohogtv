@@ -23,7 +23,6 @@ export default function Signup() {
   };
   const signUpClickHandler = async (e) => {
    e.preventDefault()
-    console.log("hello");
     try {
       const signUpData = await axios.post("/api/auth/signup",  {firstName: signUpUser.firstName, lastName: signUpUser.lastName, email: signUpUser.email, password: signUpUser.password });
       console.log(signUpData);

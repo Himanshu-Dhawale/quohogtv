@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  useState
-} from "react";
+import {useState} from "react";
 import axios from "axios";
 import { useAuth } from "../contexts/auth-context";
 import "./login.css"
@@ -20,7 +18,6 @@ export default function Login() {
         [e.target.name]: e.target.value,
       }));
     };
-console.log(user)
     const loginHandler = async (isUser) => {
       try {
         const loginData = await axios.post(
