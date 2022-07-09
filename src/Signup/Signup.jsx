@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./signup.css"
+import "./Signup.css"
 import {useAuth} from "../contexts/auth-context";
 import axios from "axios";
 
