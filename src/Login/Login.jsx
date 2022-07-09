@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from "react";
 import axios from "axios";
 import { useAuth } from "../contexts/auth-context";
-import "./login.css"
+import "./Login.css"
 export default function Login() {
 
 
@@ -23,9 +23,8 @@ export default function Login() {
         const loginData = await axios.post(
           "/api/auth/login",
 
-          { email: "adarshbalika@gmail.com", password: "adarshBalika123" }
-
-        );
+          { email: "adarshbalika@gmail.com", password: "adarshBalika123" } );
+          console.log(loginData);
         setUser({
           user: loginData.data.foundUser,
           token: loginData.data.encodedToken,
@@ -59,7 +58,7 @@ export default function Login() {
             >
               Test credentials
             </button>
-            <button className="login__button" type="submit" onClick={loginHandler(false)}>
+            <button className="login__button" type="submit" onClick={() => loginHandler(false)}>
               Login
             </button>
             <div className="login__remember">
