@@ -1,0 +1,42 @@
+.video-detail {
+    margin-top: 4rem;
+    display: flex;
+    position: relative;
+  }
+  
+  .video-container {
+    width: 70%;
+    position: absolute;
+    right: 0;
+    top: 1.3rem;
+  }
+  
+  .video-player {
+    width: 85%;
+    height: 25rem;
+  }
+  
+  .video-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .video-main {
+    display: flex;
+    align-items: center;
+    column-gap: 3rem;
+    margin-top: 1rem;
+    margin-left: 10rem;
+  }
+  .video-icons {
+    margin: auto 0;
+    font-size: 1.1rem;
+  }
+  .video-icon-title {
+    font-size: 1.1rem;
+    margin-left: 4px;
+  }
+  .video-like,
+  .video-later,
+  .video-playlist {
+    cursor: pointer;
+  }
