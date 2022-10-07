@@ -17,6 +17,7 @@
   }
   
   .video-title {
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.3rem;
     font-weight: 500;
   }
@@ -29,7 +30,7 @@
   }
   .video-icons {
     margin: auto 0;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
   .video-icon-title {
     font-size: 1.1rem;
@@ -38,5 +39,57 @@
   .video-like,
   .video-later,
   .video-playlist {
+    cursor: pointer;
+  }
+  .video-creator{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3rem;
+    margin: 1.2rem;
+  }
+  .video-description{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3rem;
+  }
+
+  /* sasd*/
+  .modal-container {
+    width: 20rem;
+    background: var(--clr-white);
+    color: var(--clr-grey-900);
+    margin: 0.5rem;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: justify;
+    border-radius: var(--radius);
+    box-shadow: var(--dark-shadow);
+    position: relative;
+  }
+  
+  .modal-header,
+  .modal-subtitle {
+    margin: 0;
+  }
+  .modal-desc {
+    margin: 10px 0;
+  }
+  .modal-action-btns {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .action-btn {
+    font-size: 0.8rem;
+  }
+  .dismiss {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
   }

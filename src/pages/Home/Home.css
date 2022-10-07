@@ -1,0 +1,49 @@
+.flex{
+        background-image: url("https://assets.jamcity.com/20210419054714/family-guy-featured-background-1-1.png");
+        background-repeat: no-repeat;
+        background-size: 98%;
+}
+
+.flex-col{
+    width: 100%;
+    align-items: center;
+    gap:3rem;
+    margin-top: 10rem;
+}
+
+.heading{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2rem;
+    /* color: white; */
+}
+
+.flex-row{
+    display: flex;
+    margin-top: 2rem;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.btn,.btn-primary-solid{
+  padding: 0.4rem 0.8rem;
+  background-color:  blue;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  border: 1px solid blue;
+  border-radius: 6px;
+  color: #fff;
+  gap: 2rem;
+  width: 10rem;
+}
+Link{
+    width: 12rem;
+    height: max-content;
+}
+.flex-row>button{
+    width: 12rem;
+    height: max-content;
+}
+
+.flex-row>button:hover{
+   opacity: 1.5;
+}

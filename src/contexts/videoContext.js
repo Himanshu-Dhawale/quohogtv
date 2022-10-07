@@ -16,7 +16,7 @@ const VideosProvider = ({ children }) => {
     (async () => {
       try {
         const { data, status } = await videoServices(); 
-        console.log(data);
+        // console.log(data);
         if (status === 200) {
           dispatchVideo({
             type:GET_VIDEOS,

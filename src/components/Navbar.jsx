@@ -1,13 +1,13 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 import "../components/Navbar.css";
+import {BiLogIn} from 'react-icons/bi';
 const Navbar = () => {
   return (
     <div>
-    <nav class="nav-bar">
-    <div class="nav-title">Title</div>
-    <button class="nav-icon"><i class='bx bxs-user'></i></button>
-    <button class="nav-icon"><i class='bx bxs-heart'></i></button>
-    <button class="nav-icon"><i class='bx bxs-cart'></i></button>
+    <nav className="nav-bar">
+    <div className="nav-title">Quohog TV</div>
+    <button className="nav-icon"><Link to={'/Login'}><BiLogIn/></Link></button>
     </nav>
     </div>
   )
