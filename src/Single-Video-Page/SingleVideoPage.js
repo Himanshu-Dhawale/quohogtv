@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react'
 import "./SingleVideoPage.css"
 import { AiOutlineEye, AiFillLike, AiOutlineLike } from "react-icons/ai";
 import { BiPlayCircle } from "react-icons/bi";
-import { MdOutlineWatchLater, MdWatchLater } from "react-icons/md";
+import { MdOutlineWatchLater } from "react-icons/md";
 import { useNavigate, useParams } from "react-router-dom"
 import axios from "axios";
 import { Navbar } from '../components/Navbar';
 import { Sidebar } from '../components/Sidebar';
 import { useAuth } from '../contexts/auth-context';
 import { useLikeVideos } from '../contexts/like-context';
-import { useWatchVideos } from '../contexts/watchlater-context';
 import { PlaylistModal } from '../components/PlaylistModal';
 export const SingleVideoPage = () => {
   const { videoId } = useParams()
@@ -18,7 +17,6 @@ export const SingleVideoPage = () => {
   const { user } = useAuth();
   const navigate = useNavigate()
   const { likedVideos, setLikedVideos } = useLikeVideos();
-  const { watchVideos, setWatchVideos } = useWatchVideos();
   useEffect(() => {
     (async () => {
       const response = await axios.get(`/api/video/${videoId}`)
@@ -80,20 +78,20 @@ export const SingleVideoPage = () => {
 
     }
   }
-  const removeWatchHandler = async (video) => {
-    try {
-      const response = await axios({
-        method: "delete",
-        url: `/api/user/watchlater/${video._id}`,
-        headers: { authorization: user.token },
-        data: { video },
-      });
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
+  // const removeWatchHandler = async (video) => {
+  //   try {
+  //     const response = await axios({
+  //       method: "delete",
+  //       url: `/api/user/watchlater/${video._id}`,
+  //       headers: { authorization: user.token },
+  //       data: { video },
+  //     });
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
 
-  }
+  // }
   const modalHandler = () => {
     setShowModal(true)
   }
@@ -121,15 +119,6 @@ export const SingleVideoPage = () => {
 
               <span className="video-icon-title"></span>
             </div>
-            {/* {watchVideos.some(video => video._id===singleVideo._id)?(
-                  <div className="video-later video" onClick={removeWatchHandler}><MdWatchLater className="video-icons" />
-                  <span className="video-icon-title">watch later</span>
-              </div>):(
-                <div className="video-later video" onClick={watchHandler}>
-                <MdOutlineWatchLater className="video-icons" />
-                <span className="video-icon-title">watch later</span>
-              </div>
-              )} */}
             <div className="video-later video" onClick={() => watchHandler(singleVideo)}>
               <MdOutlineWatchLater className="video-icons" />
               <span className="video-icon-title">watch later</span>

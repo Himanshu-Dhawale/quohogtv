@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from "react";
 import axios from "axios";
 import { useAuth } from "../contexts/auth-context";
-import "../Login/Login.css"
+import "./login.css"
 import { useLocation, useNavigate } from 'react-router-dom';
 export default function Login() {
 const navigate = useNavigate()
