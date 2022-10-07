@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./Signup.css"
+import "./signup.css"
 import {useAuth} from "../contexts/auth-context";
 import axios from "axios";
 
@@ -14,7 +14,7 @@ export default function Signup() {
     firstName: "",
     lastName: "",
   });
-  const {user ,setUser } = useAuth();
+  const {setUser } = useAuth();
   const signUpChangeHandler = (e) => {
     setSignUpUser((previousState) => ({
       ...previousState,
