@@ -41,7 +41,8 @@
   
   .login__fields input {
     padding-top: 0.8rem;
-    background-color: #000000;
+    background-color: #ddd;
+    color: #333;
     border: none;
     border-bottom: 1.5px solid #ffffff;
     outline: none;
@@ -59,7 +60,7 @@
     border-radius: 5px;
     border: none;
     color: #ffffff;;
-    background-color:#000000;
+    background-color:#4253ff;
     cursor: pointer;
     width: 100%;
     font-size: 1.2rem;

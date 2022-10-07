@@ -1,8 +1,27 @@
 import { videoImage, creatorAvatar } from "../utils/videoImages";
 import {Link} from "react-router-dom";
-import "../components/VideoCard.css"
+import "../components/VideoCard.css";
+import { useAuth } from "../contexts/auth-context";
+import { useHistory } from "../contexts/history-context";
+import axios from "axios";
 const VideoCard = ({ video }) => {
+    const {user} = useAuth()
+    const addToVideoHistory = async () => {
+        try {
+          const response = await axios({
+            method: "post",
+            url: "/api/user/history",
+            headers: { authorization: user.token },
+            data: { video },
+          });
+          console.log(response)
+          setHistory(response.data.history);
+        } catch (err) {
+          console.log(err);
+        }
+      };
   const { _id, title, creator, creatorAvatarId } = video;
+  const { setHistory } = useHistory();
   
   return (
     
@@ -11,7 +30,9 @@ const VideoCard = ({ video }) => {
             <Link to={`/videos/${_id}`}>
             <img className="img responsive-image"
                 src={videoImage(_id)}
-                alt={title}/>
+                alt={title}
+                onClick={addToVideoHistory}
+                />
             </Link>
             
         </div>
